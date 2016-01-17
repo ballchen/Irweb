@@ -4,9 +4,17 @@
 		<base href="/">
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
 	</head>
 	<body>
-		hello!
+		<h1>奶奶</h1>
+		<div class='container'>
+			<div class="col-lg-6 col-lg-offset-3">
+				<div class="col-lg-6" ng-repeat="pic in pics">
+					<img class="coolimage" src="{{pic.images[0]}}" alt="">
+				</div>
+			</div>
+		</div>
 
 		<script src="/components/jquery/dist/jquery.min.js"></script>
 		<script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
