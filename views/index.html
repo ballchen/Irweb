@@ -7,11 +7,19 @@
 		<link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
 	</head>
 	<body>
-		<h1>奶奶</h1>
+		<h1 style="text-align: center;">奶奶</h1>
+		<button class="btn btn-default" ng-click="getOther()">沒乃</button>
+		<button class="btn btn-default" ng-click="getSexy()">要乃</button>
+		<button class="btn btn-default" ng-click="getLeg()">腿</button>
+		<button class="btn btn-default" ng-click="getBig()">大</button>
+		<button class="btn btn-default" ng-click="getSmall()">小</button>
 		<div class='container'>
 			<div class="col-lg-6 col-lg-offset-3">
 				<div class="col-lg-6" ng-repeat="pic in pics">
-					<img class="coolimage" src="{{pic.images[0]}}" alt="">
+					<div class="img-wrapper">	
+						<img class="coolimage" src="{{pic.images[0]}}" alt="">
+					</div>
+					<button>喜愛</button>
 				</div>
 			</div>
 		</div>

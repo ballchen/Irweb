@@ -5,3 +5,9 @@ body {
 .coolimage{
 	width: 100%;
 }
+
+.img-wrapper {
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+}
