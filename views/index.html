@@ -19,7 +19,15 @@
 					<div class="img-wrapper">	
 						<img class="coolimage" src="{{pic.images[0]}}" alt="">
 					</div>
-					<button>喜愛</button>
+					<button ng-click="getRecommend(pic.id)">喜愛</button>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				推薦
+				<div class="col-lg-12" ng-repeat="r in recommend">
+					<div class="img-wrapper">	
+						<img class="coolimage" src="{{r.images[0]}}" alt="">
+					</div>
 				</div>
 			</div>
 		</div>

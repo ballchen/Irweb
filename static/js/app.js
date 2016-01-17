@@ -41,4 +41,10 @@ app.controller('MainCtrl', ['$scope', '$http', function($scope, $http){
 		})
 
 	}
+
+	$scope.getRecommend = function(id) {
+		$http.get('/api/pictures/recommend/'+id).success(function(data){
+			$scope.recommend = data;
+		})
+	}
 }])
