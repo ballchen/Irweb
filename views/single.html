@@ -89,7 +89,7 @@
 	        	<div class="row parent-container">
 	        		<div class="col-lg-4" ng-repeat="pic in pics">
 	                    <a href="{{pic.images[0]}}" class="thumbnail">   
-	                        <img src="{{pic.images[0]}}" style="" alt="">
+	                        <img src="{{pic.images[0]}}" class="blur" alt="">
 	                    </a>
 	                    <!-- <button class="btn" ng-click="getRecommend(pic.id)">喜愛</button> -->
 	                </div>
@@ -109,21 +109,21 @@
 		<script>
 			function openRecommend() {
 				console.log(pic.id);
-				data = getRecommend(pic.id);
+				// data = getRecommend(pic.id);
 
-				$.magnificPopup.open({
-					items: data,
-					type: 'image',
-					gallery: {
-						enabled: true
-					},
-					image: {
-						tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-						titleSrc: function(item) {
-							return '<h4>你可能也會喜歡</h4>';
-						}
-					}
-				});
+				// $.magnificPopup.open({
+				// 	items: data,
+				// 	type: 'image',
+				// 	gallery: {
+				// 		enabled: true
+				// 	},
+				// 	image: {
+				// 		tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+				// 		titleSrc: function(item) {
+				// 			return '<h4>你可能也會喜歡</h4>';
+				// 		}
+				// 	}
+				// });
 			}
 
 			$(document).ready(function(){
