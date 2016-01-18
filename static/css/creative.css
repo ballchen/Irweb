@@ -415,3 +415,13 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #333333;
 }
+
+.blur {
+   -webkit-filter: blur(7px);
+   filter: blur(7px);
+}
+
+.mfp-img {
+  -webkit-filter: blur(7px);
+   filter: blur(7px);
+}
