@@ -416,3 +416,8 @@ body {
    -webkit-filter: blur(7px);
    filter: blur(7px);
 }
+
+.mfp-img {
+  -webkit-filter: blur(7px);
+   filter: blur(7px);
+}
