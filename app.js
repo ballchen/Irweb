@@ -28,6 +28,11 @@ router.get('/', function*(){
   this.body = ejs.render(template)
 })
 
+router.get('/single', function*(){
+  const template = fs.readFileSync(__dirname + '/views/single.html', 'utf-8')
+  this.body = ejs.render(template)
+})
+
 router.get('/api/pictures/all', function*() {
 	this.status = 200;
 	this.body = allpost;

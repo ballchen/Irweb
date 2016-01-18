@@ -1,0 +1,153 @@
+<!Doctype>
+<html ng-app="MyApp" ng-controller="MainCtrl">
+	<head>
+		<base href="/">
+		<meta charset="utf-8">
+		<title>美圖秀秀</title>
+		
+		<!-- Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    	<link rel="stylesheet" type="text/css" href="/css/animate.min.css">
+    	<link rel="stylesheet" type="text/css" href="/css/magnific-popup.css">
+		<link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/creative.css">
+
+	</head>
+	<body>
+		<nav id="secondaryNav" class="navbar navbar-default navbar-fixed-top ">
+	        <div class="container-fluid">
+	            <!-- Brand and toggle get grouped for better mobile display -->
+	            <div class="navbar-header">
+	                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	                    <span class="sr-only">Toggle navigation</span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                </button>
+	                <a class="navbar-brand page-scroll" href="#page-top">美圖秀秀</a>
+	            </div>
+
+	            <!-- Collect the nav links, forms, and other content for toggling -->
+	            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	                <ul class="nav navbar-nav navbar-right">
+	                    <li>
+	                        <a class="page-scroll" href="#custom">個人設定</a>
+	                    </li>
+	                    <li>
+	                        <a class="page-scroll" href="#image-display">最新美圖</a>
+	                    </li>
+	                    <li>
+	                        <a class="page-scroll" href="">登出</a>
+	                    </li>
+	                </ul>
+	            </div>
+	            <!-- /.navbar-collapse -->
+	        </div>
+	        <!-- /.container-fluid -->
+	    </nav>
+
+	    <section class="" id="custom">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-12">
+	                     <h3>請選擇您欲欣賞的美圖類別</h3>
+	                     <p>我們將於有該類型美圖新增時以臉書訊息通知您</p>
+	                </div>
+	                <div class="col-lg-12 ">
+	                    <label class="checkbox-inline">
+	                        <input type="checkbox" id="inlineCheckbox1" value="option1"><p>巨乳圖</p>
+	                    </label>
+	                    <label class="checkbox-inline">
+	                        <input type="checkbox" id="inlineCheckbox2" value="option2"> <p>貧乳圖</p>
+	                    </label>
+	                    <label class="checkbox-inline">
+	                        <input type="checkbox" id="inlineCheckbox3" value="option3"><p>腿圖</p>
+	                    </label>
+	                </div>
+	                <div class="col-lg-12">
+	                    <a href="" class="btn btn-primary">儲存設定</a>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+
+	    <section class="bg-dark" id="image-display">
+	        <div class="container">
+	        	<div class="row">
+	        		<div class="col-lg-12">
+	        			<h3>觀看最新的美圖</h3>
+	        			<h4>請選擇篩選方式</h4>
+				        <button class="btn btn-default" ng-click="getSexy()">所有美圖</button>
+				        <button class="btn btn-default" ng-click="getLeg()">腿圖</button>
+				        <button class="btn btn-default" ng-click="getBig()">巨乳圖</button>
+				        <button class="btn btn-default" ng-click="getSmall()">貧乳圖</button>
+	        		</div>
+	        	</div>
+	        	<div class="row parent-container">
+	        		<div class="col-lg-4" ng-repeat="pic in pics">
+	                    <a href="{{pic.images[0]}}" class="thumbnail">   
+	                        <img src="{{pic.images[0]}}" style="" alt="">
+	                    </a>
+	                    <!-- <button class="btn" ng-click="getRecommend(pic.id)">喜愛</button> -->
+	                </div>
+	        	</div>
+	        </div>
+	    </section>
+
+		<script src="/components/jquery/dist/jquery.min.js"></script>
+		<script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="/components/angular/angular.min.js"></script>
+
+		<script src="/js/app.js"></script>
+		<script src="/js/wow.min.js"></script>
+		<script type="text/javascript" src="/js/magnific-popup.js"></script>
+		<script type="text/javascript" src="/js/creative.js"></script>
+
+		<script>
+			function openRecommend() {
+				console.log(pic.id);
+				data = getRecommend(pic.id);
+
+				$.magnificPopup.open({
+					items: data,
+					type: 'image',
+					gallery: {
+						enabled: true
+					},
+					image: {
+						tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+						titleSrc: function(item) {
+							return '<h4>你可能也會喜歡</h4>';
+						}
+					}
+				});
+			}
+
+			$(document).ready(function(){
+				$('.parent-container').magnificPopup({
+					delegate: 'a', // child items selector, by clicking on it popup will open
+				 	type: 'image',
+				 	tLoading: 'Loading image #%curr%...',
+					mainClass: 'mfp-img-mobile',
+					verticalFit: true, // Fits image in area vertically
+					gallery: {
+						enabled: true,
+						navigateByImgClick: true,
+						arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+						preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+					},
+					image: {
+						tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+						titleSrc: function(item) {
+							return '<button class="btn btn-primary btn-heart" onclick="openRecommend()">喜愛<i class="fa fa-heart"></i></button>';
+						}
+					}
+				});
+
+			});
+		</script>
+	</body>
+</html>

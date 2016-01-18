@@ -75,6 +75,7 @@ aside {
 // Navigation
 
 .navbar-default {
+    background-color: white;
     border-color: fade(@theme-dark, 5%);
     .sans-serif-font;
     .transition-all;
@@ -151,10 +152,6 @@ aside {
     }
 }
 
-#mainNav {
-    background-color: white;
-}
-
 #secondaryNav {
     background-color: black;
 }
@@ -167,7 +164,7 @@ header {
     min-height: auto;
     .background-cover;
     background-position: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../img/milkywayGalaxy.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/galaxy-wallpapers-10.jpg');
     text-align: center;
     color: white;
     .header-content {
@@ -178,6 +175,7 @@ header {
         .header-content-inner {
             h1 {
                 font-weight: 700;
+                font-size: 64px;
                 text-transform: uppercase;
                 margin-top: 0;
                 margin-bottom: 0;
@@ -217,7 +215,19 @@ header {
     }
 }
 
+
 // Sections
+
+#image-display {
+
+    .thumbnail {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+    }
+}
+
+
 
 .section-heading {
     margin-top: 0;
@@ -322,10 +332,17 @@ header {
     border-radius: 300px;
     font-weight: 700;
     text-transform: uppercase;
+    margin: 10px 10px 20px 0px;
 }
 
 .btn-xl {
     padding: 15px 30px;
+}
+
+.btn-heart {
+    i {
+        margin-left: 5px;
+    }
 }
 
 // Extras
