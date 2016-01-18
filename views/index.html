@@ -3,39 +3,131 @@
 	<head>
 		<base href="/">
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="/css/style.css">
+		<title>美圖秀秀</title>
+		
+		<!-- Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    	<link rel="stylesheet" type="text/css" href="/css/animate.min.css"></li>
 		<link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/creative.css">
+
 	</head>
 	<body>
-		<h1 style="text-align: center;">奶奶</h1>
-		<button class="btn btn-default" ng-click="getOther()">沒乃</button>
-		<button class="btn btn-default" ng-click="getSexy()">要乃</button>
-		<button class="btn btn-default" ng-click="getLeg()">腿</button>
-		<button class="btn btn-default" ng-click="getBig()">大</button>
-		<button class="btn btn-default" ng-click="getSmall()">小</button>
-		<div class='container'>
-			<div class="col-lg-6 col-lg-offset-3">
-				<div class="col-lg-6" ng-repeat="pic in pics">
-					<div class="img-wrapper">	
-						<img class="coolimage" src="{{pic.images[0]}}" alt="">
-					</div>
-					<button ng-click="getRecommend(pic.id)">喜愛</button>
-				</div>
-			</div>
-			<div class="col-lg-3">
-				推薦
-				<div class="col-lg-12" ng-repeat="r in recommend">
-					<div class="img-wrapper">	
-						<img class="coolimage" src="{{r.images[0]}}" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
+		<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+	        <div class="container-fluid">
+	            <!-- Brand and toggle get grouped for better mobile display -->
+	            <div class="navbar-header">
+	                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	                    <span class="sr-only">Toggle navigation</span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                </button>
+	                <a class="navbar-brand page-scroll" href="#page-top">美圖秀秀</a>
+	            </div>
+
+	            <!-- Collect the nav links, forms, and other content for toggling -->
+	            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	                <ul class="nav navbar-nav navbar-right">
+	                    <li>
+	                        <a class="page-scroll" href="#about">關於我們</a>
+	                    </li>
+	                    <li>
+	                        <a class="page-scroll" href="#contact">給點意見</a>
+	                    </li>
+	                </ul>
+	            </div>
+	            <!-- /.navbar-collapse -->
+	        </div>
+	        <!-- /.container-fluid -->
+	    </nav>
+
+	    <header>
+	        <div class="header-content">
+	            <div class="header-content-inner">
+	                <h1>Spice up Your Daliy Life</h1>
+	                <hr>
+	                <p>美圖秀秀利用最新科技為您找尋適合您的美圖，增添生活情趣</p>
+	                <a href="/single" class="btn btn-primary btn-xl page-scroll">立即觀看</a>
+	            </div>
+	        </div>
+	    </header>
+
+	    <section class="bg-primary" id="about">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-12 text-center">
+	                    <h3>網路上每天都有很多圖片，但我時間有限，要怎樣才能快速找到適合自己的圖片呢？</h3>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+
+	    <section id="services">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-12 text-center">
+	                    <h2 class="section-heading">美圖秀秀幫您做到了以下幾件事情</h2>
+	                    <hr class="primary">
+	                </div>
+	            </div>
+	        </div>
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-3 col-md-6 text-center">
+	                    <div class="service-box">
+	                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+	                        <h3>Sturdy Templates</h3>
+	                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+	                    </div>
+	                </div>
+	                <div class="col-lg-3 col-md-6 text-center">
+	                    <div class="service-box">
+	                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
+	                        <h3>Ready to Ship</h3>
+	                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+	                    </div>
+	                </div>
+	                <div class="col-lg-3 col-md-6 text-center">
+	                    <div class="service-box">
+	                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+	                        <h3>Up to Date</h3>
+	                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+	                    </div>
+	                </div>
+	                <div class="col-lg-3 col-md-6 text-center">
+	                    <div class="service-box">
+	                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
+	                        <h3>Made with Love</h3>
+	                        <p class="text-muted">You have to make your websites with love these days!</p>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+
+	    <section class="bg-dark">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-12 text-center call-to-action">
+	                    <h2>現在就開始使用美圖秀秀吧！</h2>
+	                </div>
+	                 <div class="col-lg-12 text-center">
+	                    <a href="/single" class="btn btn-xl btn-default">立即使用</a>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
 
 		<script src="/components/jquery/dist/jquery.min.js"></script>
 		<script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="/components/angular/angular.min.js"></script>
 
 		<script src="/js/app.js"></script>
+		<script src="/js/wow.min.js"></script>
+		<script type="text/javascript" src="/js/creative.js"></script>
 	</body>
 </html>
