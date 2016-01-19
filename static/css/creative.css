@@ -417,11 +417,11 @@ body {
 }
 
 .blur {
-   -webkit-filter: blur(7px);
-   filter: blur(7px);
+   -webkit-filter: blur(10px);
+   filter: blur(10px);
 }
 
 .mfp-img {
-  -webkit-filter: blur(7px);
-   filter: blur(7px);
+  -webkit-filter: blur(10px);
+   filter: blur(10px);
 }
